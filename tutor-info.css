@@ -1,0 +1,174 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    color-scheme: light;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #263746;
+    background: #f3f6f8;
+  }
+  
+  body {
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  .info-container {
+    width: min(1500px, 100%);
+    margin: 0 auto;
+    padding: 32px 24px 40px;
+  }
+  
+  .page-header {
+    padding: 28px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid #dbe3e8;
+    margin-bottom: 24px;
+  }
+  
+  .eyebrow {
+    margin: 0 0 8px;
+    color: #466f83;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+  
+  .page-header h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1.2;
+  }
+  
+  .subtitle {
+    margin: 12px 0 0;
+    color: #52636d;
+  }
+  
+  .intro-section {
+    margin-bottom: 20px;
+  }
+  
+  .intro-section h2,
+  .evaluation-note h2 {
+    margin: 0 0 10px;
+    font-size: 1.35rem;
+  }
+  
+  .intro-section p,
+  .evaluation-note p {
+    margin: 0;
+  }
+  
+  .table-section {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  
+  .table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    background: #ffffff;
+    border: 1px solid #d4dee4;
+    border-radius: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .specifications-table {
+    width: 100%;
+    min-width: 1100px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+  
+  .specifications-table th,
+  .specifications-table td {
+    padding: 16px;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #d8e1e6;
+    overflow-wrap: anywhere;
+  }
+  
+  .specifications-table thead th {
+    background: #e6eef3;
+    color: #203747;
+    font-weight: 700;
+  }
+  
+  .specifications-table tbody th {
+    background: #f4f7f9;
+    font-weight: 700;
+  }
+  
+  .specifications-table tbody tr:nth-child(even) td {
+    background: #fafcfd;
+  }
+  
+  .specifications-table tbody tr:hover td,
+  .specifications-table tbody tr:hover th {
+    background: #edf4f7;
+  }
+  
+  .evaluation-note {
+    padding: 20px;
+    border-left: 4px solid #547d91;
+    border-radius: 6px;
+    background: #eaf1f5;
+    margin-bottom: 24px;
+  }
+  
+  .page-footer {
+    padding-top: 8px;
+  }
+  
+  .back-link {
+    display: inline-block;
+    min-height: 48px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: #294e63;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  
+  .back-link:hover {
+    background: #1e3d4e;
+  }
+  
+  .back-link:focus-visible {
+    outline: 3px solid #bd7627;
+    outline-offset: 3px;
+  }
+  
+  @media (max-width: 700px) {
+    .info-container {
+      padding: 16px 12px 28px;
+    }
+  
+    .page-header {
+      padding: 20px;
+    }
+  
+    .specifications-table {
+      min-width: 1000px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  

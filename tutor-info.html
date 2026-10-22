@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutor Information | My School Routine</title>
+  <link rel="stylesheet" href="tutor-info.css">
+</head>
+
+<body>
+  <main class="info-container">
+    <header class="page-header">
+      <p class="eyebrow">MY SCHOOL ROUTINE</p>
+      <h1>Educator Information</h1>
+      <p class="subtitle">
+        Project rationale and evidence-informed design specifications
+      </p>
+    </header>
+
+    <section class="intro-section">
+      <h2>Functional Specifications</h2>
+      <p>
+        This table compares the evidence-informed functional
+        specifications with the current implementation of My School
+        Routine. It identifies existing features, implementation
+        limitations and recommended improvements.
+      </p>
+    </section>
+
+    <section class="table-section" aria-label="Design specifications">
+      <div class="table-scroll">
+        <table class="specifications-table">
+          <thead>
+            <tr>
+              <th scope="col">Specification</th>
+              <th scope="col">Supporting Sources</th>
+              <th scope="col">Functional Requirement</th>
+              <th scope="col">Current Prototype</th>
+              <th scope="col">Recommended Improvements</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th scope="row">E-01: Linear and Uncluttered Navigation</th>
+              <td>Dzaman et al. (2022); CAST (2024); Victorian Department of Education (n.d.)</td>
+              <td>Provide a linear pathway that minimises unnecessary navigation during the activity.</td>
+              <td>The routine sequence is presented on one screen, but external information and educator settings are also accessible.</td>
+              <td>Provide a learner-focused view that minimises access to external links and configuration options during the activity.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">E-02: Explicit Next-Step Assessment Trigger</th>
+              <td>Dzaman et al. (2022); CAST (2024)</td>
+              <td>Present an explicit next-step question and require a response before recording completion.</td>
+              <td>The “What comes next?” question requires a response before it can be recorded. Only one question is currently available.</td>
+              <td>Extend the activity to include additional routine steps and assessment opportunities.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">E-03: Dual-Factor Performance Logging</th>
+              <td>CAST (2024); alignment of learning outcomes, instructional sequence and assessment</td>
+              <td>Record accuracy and support level: Independent, Verbal Prompt, Gestural Support or Physical Assistance.</td>
+              <td>The log records accuracy and support level, distinguishing independent correct responses from supported correct responses.</td>
+              <td>Ensure consistent recording and interpretation of performance in relation to the learning outcome.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">E-04: Dynamic Visual Representation Engine</th>
+              <td>CAST (2024); Knight et al. (2015); AllPlay Learn (n.d.)</td>
+              <td>Allow educators to select suitable photographs, AAC symbols or other visual representations for each learner.</td>
+              <td>Representation options are present, but the photo option is a placeholder and switching is not fully functional.</td>
+              <td>Implement reliable visual switching and allow educators to select appropriate representations for individual learners.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">E-05: Strict Visual Card Consistency</th>
+              <td>CAST (2024); Knight et al. (2015)</td>
+              <td>Maintain consistent card dimensions, spacing, borders and typography.</td>
+              <td>The prototype uses consistent card layouts, 4:3 aspect ratios, padding and borders. Text sizes do not consistently meet the proposed 24 pt minimum.</td>
+              <td>Review typography and card dimensions against the specification and test readability on intended devices.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">E-06: Purposeful Multimedia Filtering</th>
+              <td>CAST (2024)</td>
+              <td>Exclude unnecessary music, decorative animations and sound effects. Use audio for an instructional or accessibility purpose.</td>
+              <td>There is no background music or decorative animation. Selecting a response automatically triggers browser speech synthesis.</td>
+              <td>Consider educator control over spoken output and test its suitability for different learners.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">E-07: Multi-Modal AAC Response Support</th>
+              <td>CAST (2024); Pope et al. (2025); Therrien et al. (2025)</td>
+              <td>Support appropriate input methods, including touch, pointer, keyboard, switch access and compatible AAC systems.</td>
+              <td>Standard HTML buttons support common pointer and keyboard interactions. Dedicated switch access and direct AAC integration have not been implemented or verified.</td>
+              <td>Test assistive-technology access, investigate switch compatibility and assess possible AAC system integration.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">E-08: Technical Accessibility and WCAG 2.2 Alignment</th>
+              <td>W3C (2023); CAST (2024)</td>
+              <td>Provide accessible interaction targets, sufficient contrast, visible focus indicators and appropriate accessible names.</td>
+              <td>Buttons and selects have a 48 px minimum height, visible focus styling and reduced-motion support. Contrast and full WCAG 2.2 compliance have not been verified.</td>
+              <td>Conduct an accessibility audit and test contrast, interactive targets, keyboard access and assistive-technology compatibility.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">E-09: Contextual Support Differentiation in Reports</th>
+              <td>CAST (2024); alignment of learning outcomes, instructional sequence and assessment</td>
+              <td>Distinguish independent correct responses from correct responses achieved with support.</td>
+              <td>The on-screen log identifies independent and supported correct responses. CSV fields allow these categories to be interpreted together.</td>
+              <td>Add an explicit performance category to the exported report and document how each category should be interpreted.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="evaluation-note">
+      <h2>Evaluation note</h2>
+      <p>
+        The implementation status reflects inspection of the current
+        prototype code. Accessibility, usability and learning
+        effectiveness require separate testing. The supporting
+        references should be checked against the original publications
+        before academic submission.
+      </p>
+    </aside>
+
+    <footer class="page-footer">
+      <a href="Index.html" class="back-link">
+        Return to My School Routine
+      </a>
+    </footer>
+  </main>
+</body>
+</html>
+
+
