@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>My School Routine</title>
+  <link rel="stylesheet" href="Prototype-B.css">
+</head>
+<body>
+  <div id="app" data-sites-preview-theme="custom">
+    <header class="topbar" aria-label="Activity header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">💡</div>
+        <div>
+          <h1 id="routineHeading">My School Routine</h1>
+          <p class="subtitle">Look, think, and choose what comes next.</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="secondary" id="educatorModeBtn" aria-pressed="false">Show educator tools</button>
+        <button class="secondary" id="settingsBtn" aria-label="Open educator settings">Educator settings</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel" aria-labelledby="sequenceTitle">
+        <div class="section-kicker">Arrival Routine</div>
+        <h2 id="sequenceTitle">First, we do these activities</h2>
+        <p class="helper">Look at the cards in order, from left to right.</p>
+        <div class="sequence" id="sequenceTrack" aria-label="Routine steps">
+          <div class="step-card">
+            <span class="symbol-wrap" aria-hidden="true"><img class="symbol" src="images/Arrive.png" alt=""></span>
+            <span class="label">Arrive at school</span>
+          </div>
+          <div class="step-card">
+            <span class="symbol-wrap" aria-hidden="true"><img class="symbol" src="images/Sign.png" alt=""></span>
+            <span class="label">Sign in</span>
+          </div>
+          <div class="step-card">
+            <span class="symbol-wrap" aria-hidden="true"><img class="symbol" src="images/PutBag.png" alt=""></span>
+            <span class="label">Put bag away</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="taskTitle">
+        <div class="section-kicker">Think and respond</div>
+        <div class="question-row">
+          <h2 id="taskTitle">Let’s discover the next step</h2>
+          <span id="progressText" aria-live="polite">Question 1 of 1</span>
+        </div>
+        <p class="prompt" id="promptText">What comes next?</p>
+        <p class="helper" id="instructionText">Choose the card that shows what we do after putting our bag away.</p>
+        <div class="responses" id="responseOptions" role="group" aria-label="Response options">
+          <button class="response" type="button" data-answer="wash" aria-pressed="false">
+            <span class="symbol-wrap" aria-hidden="true"><img class="symbol" src="images/WashBody.png" alt=""></span>
+            <span class="label">Wash body</span>
+          </button>
+          <button class="response" type="button" data-answer="brush" aria-pressed="false">
+            <span class="symbol-wrap" aria-hidden="true"><img class="symbol" src="images/Brush.png" alt=""></span>
+            <span class="label">Brush teeth</span>
+          </button>
+          <button class="response" type="button" data-answer="sit" aria-pressed="false">
+            <span class="symbol-wrap" aria-hidden="true"><img class="symbol" src="images/Sit.png" alt=""></span>
+            <span class="label">Sit at table</span>
+          </button>
+        </div>
+        <div class="learner-actions">
+          <button class="secondary" type="button" id="speakOptionsBtn">Read options aloud</button>
+        </div>
+        <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel educator-only" id="reportPanel" aria-labelledby="reportTitle">
+        <div class="section-kicker">Educator summary</div>
+        <div class="question-row">
+          <h2 id="reportTitle">Response log</h2>
+          <button class="secondary" type="button" id="exportBtn">Export CSV</button>
+        </div>
+        <p class="helper">Accuracy and support are recorded separately. No response and not assessed are distinct statuses; neither is automatically treated as incorrect.</p>
+        <div class="report">
+          <table>
+            <caption class="sr-only">Recorded learner responses</caption>
+            <thead>
+              <tr><th scope="col">Time</th><th scope="col">Response</th><th scope="col">Accuracy</th><th scope="col">Support</th><th scope="col">Performance category</th></tr>
+            </thead>
+            <tbody id="logRows">
+              <tr><td colspan="5">No responses recorded yet.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="secondary clear-log-btn" type="button" id="clearLogBtn">Clear response log</button>
+      </section>
+    </main>
+  </div>
+
+  <footer class="teacher-strip educator-only" id="teacherStrip" aria-label="Educator response recording">
+    <div class="teacher-inner">
+      <div>
+        <div class="section-kicker">Educator logging</div>
+        <div class="teacher-title">Record this opportunity</div>
+        <p class="teacher-note">Choose the support provided. Record no response or not assessed when appropriate.</p>
+        <div class="status" id="selectedSupportText" aria-live="polite">Support selected: Independent</div>
+      </div>
+      <div class="support-controls">
+        <div class="supports" role="group" aria-label="Level of support provided">
+          <button class="support" type="button" data-support="Independent" aria-pressed="true">Independent</button>
+          <button class="support" type="button" data-support="Verbal prompt" aria-pressed="false">Verbal prompt</button>
+          <button class="support" type="button" data-support="Gestural support" aria-pressed="false">Gestural support</button>
+          <button class="support" type="button" data-support="Physical assistance" aria-pressed="false">Physical assistance</button>
+        </div>
+        <label class="note-label" for="educatorNotes">Observation (optional)</label>
+        <input id="educatorNotes" type="text" maxlength="240" placeholder="Brief contextual note">
+      </div>
+      <div class="teacher-actions">
+        <button type="button" id="recordBtn" disabled>Record response</button>
+        <button class="secondary" type="button" id="noResponseBtn">Record no response</button>
+        <button class="secondary" type="button" id="notAssessedBtn">Not assessed</button>
+        <button class="secondary" type="button" id="resetBtn">Reset activity</button>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="settingsDialog" aria-labelledby="settingsTitle">
+    <div class="question-row">
+      <h2 id="settingsTitle">Educator settings</h2>
+      <button class="secondary" type="button" id="closeSettings" aria-label="Close settings">Close</button>
+    </div>
+    <p class="helper">Customise visual presentation and speech output. Uploaded images are used in this page session only; they are not sent to a server.</p>
+    <div class="settings-grid">
+      <label for="representationSet">Representation type
+        <select id="representationSet">
+          <option value="images">Use supplied images</option>
+          <option value="symbols">Use simple symbols</option>
+          <option value="text">Text labels only</option>
+          <option value="photos">Use uploaded photos (if selected)</option>
+        </select>
+      </label>
+      <label for="speechMode">Speech output
+        <select id="speechMode">
+          <option value="manual">Manual: play when requested</option>
+          <option value="automatic">Automatic after response selection</option>
+          <option value="off">Off</option>
+        </select>
+      </label>
+      <label for="learnerName">Learner identifier (optional)
+        <input id="learnerName" type="text" placeholder="e.g. Learner A" maxlength="60">
+      </label>
+      <label for="routineName">Routine name
+        <input id="routineName" type="text" value="My School Routine" maxlength="80">
+      </label>
+    </div>
+    <h3>Optional visual replacements</h3>
+    <p class="helper">Choose a local image for an individual card. Select “Use uploaded photos” to display uploaded images. If no image is uploaded, the original image remains as a fallback.</p>
+    <div class="upload-grid">
+      <label for="upload-arrive">Arrive at school<input type="file" id="upload-arrive" accept="image/*"></label>
+      <label for="upload-sign">Sign in<input type="file" id="upload-sign" accept="image/*"></label>
+      <label for="upload-bag">Put bag away<input type="file" id="upload-bag" accept="image/*"></label>
+      <label for="upload-wash">Wash body<input type="file" id="upload-wash" accept="image/*"></label>
+      <label for="upload-brush">Brush teeth<input type="file" id="upload-brush" accept="image/*"></label>
+      <label for="upload-sit">Sit at table<input type="file" id="upload-sit" accept="image/*"></label>
+    </div>
+    <div class="dialog-actions">
+      <button type="button" id="saveSettings">Apply settings</button>
+      <button class="secondary" type="button" id="clearCustomImages">Clear uploaded images</button>
+    </div>
+    <p class="helper small-note">This prototype does not claim verified switch-access or direct AAC-system compatibility. These require separate testing.</p>
+  </dialog>
+
+  <script src="Prototype-B.js"></script>
+</body>
+</html>

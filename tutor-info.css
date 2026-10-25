@@ -6,13 +6,24 @@
   :root {
     color-scheme: light;
     font-family: Arial, Helvetica, sans-serif;
-    color: #263746;
-    background: #f3f6f8;
+    color: #24364B;
+    background: #F4F7FB;
+  
+    --page-background: #F4F7FB;
+    --card-background: #FFFFFF;
+    --text-primary: #24364B;
+    --button-primary: #416A9C;
+    --button-hover: #345781;
+    --border-colour: #D5D8E8;
+    --lavender-accent: #E8E5F5;
+    --focus-colour: #7456A6;
   }
   
   body {
     margin: 0;
     line-height: 1.6;
+    background-color: var(--page-background);
+    color: var(--text-primary);
   }
   
   .info-container {
@@ -21,17 +32,21 @@
     padding: 32px 24px 40px;
   }
   
+  /* =========================================
+     PAGE HEADER
+     ========================================= */
+  
   .page-header {
     padding: 28px;
     border-radius: 14px;
-    background: #ffffff;
-    border: 1px solid #dbe3e8;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-colour);
     margin-bottom: 24px;
   }
   
   .eyebrow {
     margin: 0 0 8px;
-    color: #466f83;
+    color: var(--button-primary);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -39,14 +54,19 @@
   
   .page-header h1 {
     margin: 0;
+    color: var(--text-primary);
     font-size: clamp(1.8rem, 4vw, 2.6rem);
     line-height: 1.2;
   }
   
   .subtitle {
     margin: 12px 0 0;
-    color: #52636d;
+    color: #53657B;
   }
+  
+  /* =========================================
+     INTRODUCTION
+     ========================================= */
   
   .intro-section {
     margin-bottom: 20px;
@@ -56,12 +76,17 @@
   .evaluation-note h2 {
     margin: 0 0 10px;
     font-size: 1.35rem;
+    color: var(--text-primary);
   }
   
   .intro-section p,
   .evaluation-note p {
     margin: 0;
   }
+  
+  /* =========================================
+     SPECIFICATIONS TABLE
+     ========================================= */
   
   .table-section {
     width: 100%;
@@ -71,8 +96,8 @@
   .table-scroll {
     width: 100%;
     overflow-x: auto;
-    background: #ffffff;
-    border: 1px solid #d4dee4;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-colour);
     border-radius: 12px;
     -webkit-overflow-scrolling: touch;
   }
@@ -91,37 +116,47 @@
     padding: 16px;
     text-align: left;
     vertical-align: top;
-    border: 1px solid #d8e1e6;
+    border: 1px solid var(--border-colour);
     overflow-wrap: anywhere;
   }
   
   .specifications-table thead th {
-    background: #e6eef3;
-    color: #203747;
+    background-color: var(--lavender-accent);
+    color: var(--text-primary);
     font-weight: 700;
   }
   
   .specifications-table tbody th {
-    background: #f4f7f9;
+    background-color: #F4F7FB;
+    color: var(--text-primary);
     font-weight: 700;
   }
   
   .specifications-table tbody tr:nth-child(even) td {
-    background: #fafcfd;
+    background-color: #FAF9FD;
   }
   
   .specifications-table tbody tr:hover td,
   .specifications-table tbody tr:hover th {
-    background: #edf4f7;
+    background-color: #EFEDF8;
   }
+  
+  /* =========================================
+     EVALUATION NOTE
+     ========================================= */
   
   .evaluation-note {
     padding: 20px;
-    border-left: 4px solid #547d91;
+    border-left: 4px solid var(--button-primary);
     border-radius: 6px;
-    background: #eaf1f5;
+    background-color: var(--lavender-accent);
     margin-bottom: 24px;
+    color: var(--text-primary);
   }
+  
+  /* =========================================
+     FOOTER AND BACK BUTTON
+     ========================================= */
   
   .page-footer {
     padding-top: 8px;
@@ -131,21 +166,41 @@
     display: inline-block;
     min-height: 48px;
     padding: 12px 18px;
+    border: 2px solid var(--button-primary);
     border-radius: 8px;
-    background: #294e63;
-    color: #ffffff;
+    background-color: var(--button-primary);
+    color: #FFFFFF;
     text-decoration: none;
     font-weight: 700;
   }
   
   .back-link:hover {
-    background: #1e3d4e;
+    background-color: var(--button-hover);
+    border-color: var(--button-hover);
+    color: #FFFFFF;
   }
   
   .back-link:focus-visible {
-    outline: 3px solid #bd7627;
+    outline: 3px solid var(--focus-colour);
     outline-offset: 3px;
   }
+  
+  /* =========================================
+     KEYBOARD ACCESSIBILITY
+     ========================================= */
+  
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid var(--focus-colour);
+    outline-offset: 3px;
+  }
+  
+  /* =========================================
+     RESPONSIVE DESIGN
+     ========================================= */
   
   @media (max-width: 700px) {
     .info-container {
@@ -161,6 +216,10 @@
     }
   }
   
+  /* =========================================
+     REDUCED MOTION
+     ========================================= */
+  
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -171,4 +230,20 @@
       transition-duration: 0.01ms !important;
     }
   }
-  
+
+
+  .page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 30px;
+}
+
+.back-left {
+    margin-right: auto;
+}
+
+.back-right {
+    margin-left: auto;
+}

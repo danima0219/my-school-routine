@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My School Routine</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <div id="app" data-sites-preview-theme="custom">
+    <header class="topbar" aria-label="Activity header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><a
+          href="tutor-info.html"
+          class="sun-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open educator information"
+          title="Educator Information"
+      >
+          💡
+      </a></div>
+        <div>
+          <h1>My School Routine</h1>
+          <p class="subtitle">Look, think, and choose what comes next.</p>
+        </div>
+      </div>
+
+      <button class="secondary" id="settingsBtn" aria-label="Open educator settings">Educator settings</button>
+    </header>
+    <main class="layout">
+      <section class="panel" aria-labelledby="sequenceTitle">
+        <div class="section-kicker">Arrival Routine</div>
+        <h2 id="sequenceTitle">First, we do these activities</h2>
+        <p class="helper">Look at the cards in order, from left to right.</p>
+        <div class="sequence" id="sequenceTrack" aria-label="Routine steps shown so far">
+          <div class="step-card"><span class="symbol" aria-hidden="true">
+              <img class="symbol" src="images/Arrive.png" alt="Arrive at school"></span><span class="label">Arrive at
+              school</span></div>
+          <div class="step-card"><span class="symbol" aria-hidden="true">
+              <img class="symbol" src="images/Sign.png" alt="Arrive at school"></span><span class="label">Sign in</span>
+          </div>
+          <div class="step-card"><span class="symbol" aria-hidden="true"><img class="symbol" src="images/PutBag.png"
+                alt="Arrive at school"></span><span class="label">Put bag away
+            </span></div>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="taskTitle">
+        <div class="section-kicker">Think and respond</div>
+        <div class="question-row">
+          <h2 id="taskTitle">Let’s discover the next step</h2><span id="progressText" aria-live="polite">Question 1 of
+            1</span>
+        </div>
+        <p class="prompt" id="promptText">What comes next?</p>
+        <p class="helper" id="instructionText">Choose the card that shows what we do after putting our bag away.</p>
+        <div class="responses" id="responseOptions" role="group" aria-label="Response options">
+
+          <button class="response" data-answer="wash" aria-pressed="false"><span class="symbol" aria-hidden="true">
+              <img class="symbol" src="images/WashBody.png" alt="Arrive at school"></span><span class="label">Wash
+              Body</span></button>
+          <button class="response" data-answer="brush" aria-pressed="false"><span class="symbol" aria-hidden="true"><img
+                class="symbol" src="images/Brush.png" alt="Arrive at school"></span><span class="label">Brush
+              Teeth</span></button>
+          <button class="response" data-answer="sit" aria-pressed="false"><span class="symbol" aria-hidden="true"><img
+                class="symbol" src="images/Sit.png" alt="Arrive at school"></span><span class="label">Sit at
+              table</span></button>
+        </div>
+        <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+      </section>
+      <section class="panel" aria-labelledby="reportTitle">
+        <div class="section-kicker">Educator summary</div>
+        <div class="question-row">
+          <h2 id="reportTitle">Response log</h2><button class="secondary" id="exportBtn">Export CSV</button>
+        </div>
+        <p class="helper">Each record combines the outcome with the selected level of support. Data from this prototype
+          is stored in the current browser session and can be exported as a CSV file.</p>
+        <div class="report">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Response</th>
+                <th>Accuracy</th>
+                <th>Support</th>
+              </tr>
+            </thead>
+            <tbody id="logRows">
+              <tr>
+                <td colspan="4">No responses recorded yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer class="teacher-strip" aria-label="Panel fijo de registro docente">
+    <div class="teacher-inner">
+      <div>
+        <div class="section-kicker">Educator logging</div>
+        <div class="teacher-title">What support did the learner need?</div>
+        <p class="teacher-note">Select the support level before recording the response.</p>
+        <div class="status" id="selectedSupportText" aria-live="polite">Support selected: Independent</div>
+      </div>
+      <div class="supports" role="group" aria-label="Level of support provided">
+        <button class="support" data-support="Independent" aria-pressed="true">Independent</button>
+        <button class="support" data-support="Verbal prompt" aria-pressed="false">Verbal help</button>
+        <button class="support" data-support="Gestural support" aria-pressed="false">Gestures</button>
+        <button class="support" data-support="Physical assistance" aria-pressed="false">Physical help</button>
+      </div>
+      <div class="teacher-actions"><button id="recordBtn" disabled>Record response</button><button class="secondary"
+          id="resetBtn">Reset activity</button></div>
+    </div>
+  </footer>
+  <dialog id="settingsDialog" aria-labelledby="settingsTitle">
+    <div class="question-row">
+      <h2 id="settingsTitle">Educator settings</h2><button class="secondary" id="closeSettings"
+        aria-label="Close settings">Close</button>
+    </div>
+    <p class="helper">Customise the presentation to match the visual supports the learner already uses.</p>
+    <div class="settings-grid">
+      <label for="representationSet">Representation type
+        <select id="representationSet">
+          <option value="emoji">Example symbols</option>
+          <option value="text">Text labels</option>
+          <option value="photo">Photo placeholder mode</option>
+        </select>
+      </label>
+      <label for="learnerName">Learner identifier (optional)
+        <input id="learnerName" type="text" placeholder="e.g. Learner A" maxlength="60">
+      </label>
+      <label for="routineName">Routine name
+        <input id="routineName" type="text" value="My School Routine" maxlength="80">
+      </label>
+    </div>
+    <p class="helper">Note: photo mode is a placeholder for future real-context images. This prototype does not include
+      a photo library or commercial Boardmaker symbols.</p>
+    <button id="saveSettings">Save settings</button>
+  </dialog>
+  <script src="script.js"></script>
+
+  
+</body>
+
+</html>

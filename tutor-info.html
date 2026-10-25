@@ -1,141 +1,519 @@
-
 <!DOCTYPE html>
 <html lang="en-AU">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tutor Information | My School Routine</title>
-  <link rel="stylesheet" href="tutor-info.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tutor Information | My School Routine</title>
+
+    <link rel="stylesheet" href="tutor-info.css">
 </head>
 
 <body>
-  <main class="info-container">
-    <header class="page-header">
-      <p class="eyebrow">MY SCHOOL ROUTINE</p>
-      <h1>Educator Information</h1>
-      <p class="subtitle">
-        Project rationale and evidence-informed design specifications
-      </p>
-    </header>
 
-    <section class="intro-section">
-      <h2>Functional Specifications</h2>
-      <p>
-        This table compares the evidence-informed functional
-        specifications with the current implementation of My School
-        Routine. It identifies existing features, implementation
-        limitations and recommended improvements.
-      </p>
-    </section>
+    <main class="info-container">
 
-    <section class="table-section" aria-label="Design specifications">
-      <div class="table-scroll">
-        <table class="specifications-table">
-          <thead>
-            <tr>
-              <th scope="col">Specification</th>
-              <th scope="col">Supporting Sources</th>
-              <th scope="col">Functional Requirement</th>
-              <th scope="col">Current Prototype</th>
-              <th scope="col">Recommended Improvements</th>
-            </tr>
-          </thead>
+        <header class="page-header">
+            <p class="eyebrow">MY SCHOOL ROUTINE</p>
 
-          <tbody>
-            <tr>
-              <th scope="row">E-01: Linear and Uncluttered Navigation</th>
-              <td>Dzaman et al. (2022); CAST (2024); Victorian Department of Education (n.d.)</td>
-              <td>Provide a linear pathway that minimises unnecessary navigation during the activity.</td>
-              <td>The routine sequence is presented on one screen, but external information and educator settings are also accessible.</td>
-              <td>Provide a learner-focused view that minimises access to external links and configuration options during the activity.</td>
-            </tr>
+            <h1>Tutor Information</h1>
 
-            <tr>
-              <th scope="row">E-02: Explicit Next-Step Assessment Trigger</th>
-              <td>Dzaman et al. (2022); CAST (2024)</td>
-              <td>Present an explicit next-step question and require a response before recording completion.</td>
-              <td>The “What comes next?” question requires a response before it can be recorded. Only one question is currently available.</td>
-              <td>Extend the activity to include additional routine steps and assessment opportunities.</td>
-            </tr>
+            <p class="subtitle">
+                Project rationale and evidence-informed design specifications
+            </p>
+        </header>
 
-            <tr>
-              <th scope="row">E-03: Dual-Factor Performance Logging</th>
-              <td>CAST (2024); alignment of learning outcomes, instructional sequence and assessment</td>
-              <td>Record accuracy and support level: Independent, Verbal Prompt, Gestural Support or Physical Assistance.</td>
-              <td>The log records accuracy and support level, distinguishing independent correct responses from supported correct responses.</td>
-              <td>Ensure consistent recording and interpretation of performance in relation to the learning outcome.</td>
-            </tr>
 
-            <tr>
-              <th scope="row">E-04: Dynamic Visual Representation Engine</th>
-              <td>CAST (2024); Knight et al. (2015); AllPlay Learn (n.d.)</td>
-              <td>Allow educators to select suitable photographs, AAC symbols or other visual representations for each learner.</td>
-              <td>Representation options are present, but the photo option is a placeholder and switching is not fully functional.</td>
-              <td>Implement reliable visual switching and allow educators to select appropriate representations for individual learners.</td>
-            </tr>
+        <section class="intro-section">
+            <h2>Functional Specifications</h2>
 
-            <tr>
-              <th scope="row">E-05: Strict Visual Card Consistency</th>
-              <td>CAST (2024); Knight et al. (2015)</td>
-              <td>Maintain consistent card dimensions, spacing, borders and typography.</td>
-              <td>The prototype uses consistent card layouts, 4:3 aspect ratios, padding and borders. Text sizes do not consistently meet the proposed 24 pt minimum.</td>
-              <td>Review typography and card dimensions against the specification and test readability on intended devices.</td>
-            </tr>
+            <p>
+                This table compares the evidence-informed functional
+                specifications with the current implementation of My School
+                Routine. It identifies existing features, implementation
+                limitations and recommended improvements. Supporting sources
+                provide the rationale for design decisions, but do not
+                necessarily validate the effectiveness of the prototype.
+            </p>
+        </section>
 
-            <tr>
-              <th scope="row">E-06: Purposeful Multimedia Filtering</th>
-              <td>CAST (2024)</td>
-              <td>Exclude unnecessary music, decorative animations and sound effects. Use audio for an instructional or accessibility purpose.</td>
-              <td>There is no background music or decorative animation. Selecting a response automatically triggers browser speech synthesis.</td>
-              <td>Consider educator control over spoken output and test its suitability for different learners.</td>
-            </tr>
 
-            <tr>
-              <th scope="row">E-07: Multi-Modal AAC Response Support</th>
-              <td>CAST (2024); Pope et al. (2025); Therrien et al. (2025)</td>
-              <td>Support appropriate input methods, including touch, pointer, keyboard, switch access and compatible AAC systems.</td>
-              <td>Standard HTML buttons support common pointer and keyboard interactions. Dedicated switch access and direct AAC integration have not been implemented or verified.</td>
-              <td>Test assistive-technology access, investigate switch compatibility and assess possible AAC system integration.</td>
-            </tr>
+        <section class="table-section"
+                 aria-label="Design specifications">
 
-            <tr>
-              <th scope="row">E-08: Technical Accessibility and WCAG 2.2 Alignment</th>
-              <td>W3C (2023); CAST (2024)</td>
-              <td>Provide accessible interaction targets, sufficient contrast, visible focus indicators and appropriate accessible names.</td>
-              <td>Buttons and selects have a 48 px minimum height, visible focus styling and reduced-motion support. Contrast and full WCAG 2.2 compliance have not been verified.</td>
-              <td>Conduct an accessibility audit and test contrast, interactive targets, keyboard access and assistive-technology compatibility.</td>
-            </tr>
+            <div class="table-scroll">
 
-            <tr>
-              <th scope="row">E-09: Contextual Support Differentiation in Reports</th>
-              <td>CAST (2024); alignment of learning outcomes, instructional sequence and assessment</td>
-              <td>Distinguish independent correct responses from correct responses achieved with support.</td>
-              <td>The on-screen log identifies independent and supported correct responses. CSV fields allow these categories to be interpreted together.</td>
-              <td>Add an explicit performance category to the exported report and document how each category should be interpreted.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+                <table class="specifications-table">
 
-    <aside class="evaluation-note">
-      <h2>Evaluation note</h2>
-      <p>
-        The implementation status reflects inspection of the current
-        prototype code. Accessibility, usability and learning
-        effectiveness require separate testing. The supporting
-        references should be checked against the original publications
-        before academic submission.
-      </p>
-    </aside>
+                    <thead>
+                        <tr>
+                            <th scope="col">Specification</th>
+                            <th scope="col">Supporting Sources</th>
+                            <th scope="col">Functional Requirement</th>
+                            <th scope="col">Current Prototype</th>
+                            <th scope="col">Recommended Improvements</th>
+                        </tr>
+                    </thead>
 
-    <footer class="page-footer">
-      <a href="Index.html" class="back-link">
-        Return to My School Routine
-      </a>
-    </footer>
-  </main>
+                    <tbody>
+
+                        <!-- E-01 -->
+
+                        <tr>
+                            <th scope="row">
+                                E-01: Linear and Uncluttered Navigation
+                            </th>
+
+                            <td>
+                                Dzaman et al. (2022); CAST (2024).
+                                These sources provide a basis for organising
+                                accessible learning experiences and
+                                anticipating barriers. 
+                            </td>
+
+                            <td>
+                                Provide a predictable activity sequence
+                                that minimises unnecessary navigation
+                                and keeps the learner focused on the
+                                current routine and learning objective.
+                            </td>
+
+                            <td>
+                                The routine sequence is presented on one
+                                screen. External information and educator
+                                settings are also accessible, introducing
+                                navigation options unrelated to the
+                                immediate activity.
+                            </td>
+
+                            <td>
+                                Develop a learner-focused view that
+                                separates the activity from educator
+                                information and configuration options.
+                                Preserve educator access without
+                                unnecessarily interrupting the activity.
+                            </td>
+                        </tr>
+
+
+                        <!-- E-02 -->
+
+                        <tr>
+                            <th scope="row">
+                                E-02: Explicit Next-Step Assessment Trigger
+                            </th>
+
+                            <td>
+                                Dzaman et al. (2022), concerning assessment
+                                and UDL; CAST (2024), Guidelines 5.1
+                                and 6.4. Support accessible
+                                response options and monitoring progress,
+                                but do not independently establish the
+                                effectiveness of a mandatory next-step
+                                question for this specific population.
+                            </td>
+
+                            <td>
+                                Present an explicit question asking the
+                                learner to identify the next step in a
+                                familiar school routine. Record the
+                                response before marking the assessment
+                                opportunity as completed, while allowing
+                                appropriate communication and support
+                                options.
+                            </td>
+
+                            <td>
+                                The "What comes next?" question requires
+                                a response before it can be recorded.
+                                Only one question is currently available.
+                            </td>
+
+                            <td>
+                                Extend the activity to include additional
+                                routine steps and assessment opportunities.
+                                Ensure that the response mechanism
+                                accommodates the learner's available
+                                communication methods. Do not automatically
+                                interpret an absent response as a lack
+                                of understanding.
+                            </td>
+                        </tr>
+
+
+                        <!-- E-03 -->
+
+                        <tr>
+                            <th scope="row">
+                                E-03: Dual-Factor Performance Logging
+                            </th>
+
+                            <td>
+                                CAST (2024), Guidelines 5.3 and 6.4;
+                                Dzaman et al. (2022), concerning assessment
+                                and UDL. These sources support graduated
+                                assistance and monitoring progress.
+                                The specific support categories are
+                                project-defined and require operational
+                                definitions.
+                            </td>
+
+                            <td>
+                                Record response accuracy and level of
+                                support as separate dimensions.
+                                Use clearly defined categories:
+                                Independent, Verbal Prompt, Gestural
+                                Support and Physical Assistance.
+                                Document performance in relation to
+                                the intended learning outcome.
+                            </td>
+
+                            <td>
+                                The log records accuracy and support
+                                level, distinguishing independent correct
+                                responses from supported correct
+                                responses.
+                            </td>
+
+                            <td>
+                                Define each support category and establish
+                                consistent recording procedures. Include
+                                procedures for incorrect responses,
+                                no response and responses that cannot
+                                be assessed. Interpret performance in
+                                relation to the learning outcome rather
+                                than interface navigation alone.
+                            </td>
+                        </tr>
+
+
+                        <!-- E-04 -->
+
+                        <tr>
+                            <th scope="row">
+                                E-04: Adaptable Visual Representation Options
+                            </th>
+
+                            <td>
+                                CAST (2024), Guidelines 2.5 and 4.2;
+                                Knight et al. (2015).
+                                Knight et al. provides evidence concerning
+                                visual activity schedules for autistic
+                                individuals.
+                            </td>
+
+                            <td>
+                                Allow educators to select and change
+                                photographs, AAC symbols or other
+                                appropriate visual representations for
+                                individual routine steps, according to
+                                the learner's communication needs,
+                                familiarity and preferences.
+                            </td>
+
+                            <td>
+                                Representation options are present,
+                                but the photograph option is a
+                                placeholder and switching between
+                                representations is not fully functional.
+                            </td>
+
+                            <td>
+                                Implement reliable visual switching and
+                                allow educators to select appropriate
+                                representations for individual learners.
+                                Verify that each option displays correctly
+                                and remains consistent throughout the
+                                activity. Avoid assuming that one
+                                representation type is universally
+                                preferable.
+                            </td>
+                        </tr>
+
+
+                        <!-- E-05 -->
+
+                        <tr>
+                            <th scope="row">
+                                E-05: Consistent Visual Card Layout and Readability
+                            </th>
+
+                            <td>
+                                Dzaman et al. (2022), concerning
+                                typography, colour and contrast;
+                                CAST (2024), Guideline 2.1.
+                                These sources provide general principles
+                                for accessible presentation and
+                                clarifying information. 
+                            </td>
+
+                            <td>
+                                Maintain consistent card dimensions,
+                                spacing, borders and typography.
+                                Ensure that text and visual representations
+                                remain legible across intended devices
+                                and that essential information remains
+                                available when text is resized.
+                            </td>
+
+                            <td>
+                                The prototype uses consistent card
+                                layouts, 4:3 aspect ratios, padding
+                                and borders. Text sizes do not
+                                consistently meet the proposed
+                                24 pt minimum.
+                            </td>
+
+                            <td>
+                                Review typography and card dimensions
+                                against the project's specification.
+                                Treat 24 pt as a project-specific
+                                design target requiring justification
+                                and testing, rather than a universal
+                                accessibility requirement. Test
+                                readability, scaling and layout
+                                consistency on intended devices.
+                            </td>
+                        </tr>
+
+
+                        <!-- E-06 -->
+
+                        <tr>
+                            <th scope="row">
+                                E-06: Purposeful Multimedia and Audio Controls
+                            </th>
+
+                            <td>
+                                Dzaman et al. (2022), concerning
+                                multimedia in technology-enabled learning;
+                                CAST (2024), Guidelines 2.5 and 7.4.
+                                These sources support purposeful use
+                                of multimedia and consideration of
+                                distractions, rather than universal
+                                exclusion of audio or animation.
+                            </td>
+
+                            <td>
+                                Avoid unnecessary decorative multimedia.
+                                Include audio, animation or other media
+                                when they serve an instructional or
+                                accessibility purpose. Provide
+                                appropriate control over their use.
+                            </td>
+
+                            <td>
+                                The prototype does not use background
+                                music or decorative animation.
+                                Selecting a response automatically
+                                triggers browser speech synthesis.
+                            </td>
+
+                            <td>
+                                Evaluate whether automatic speech output
+                                is appropriate for different learners.
+                                Consider educator controls for enabling,
+                                disabling or manually activating speech.
+                                Verify that audio supports the intended
+                                activity without unnecessarily
+                                interrupting engagement or communication.
+                            </td>
+                        </tr>
+
+
+                        <!-- E-07 -->
+
+                        <tr>
+                            <th scope="row">
+                                E-07: Accessible Response Methods and
+                                Assistive Technology Compatibility
+                            </th>
+
+                            <td>
+                                CAST (2024), Guidelines 4.1, 4.2 and 5.1;
+                    
+                                Pope et al. (2025) examines interventions
+                                combining naturalistic developmental
+                                behavioural approaches and aided AAC.
+                                Therrien et al.(2025) reviews AAC interventions
+                                using speech-generating devices with
+                                autistic preschoolers. 
+                            </td>
+
+                            <td>
+                                Support appropriate response methods,
+                                including touch, pointer and keyboard
+                                interaction, and investigate compatibility
+                                with switch access and relevant AAC
+                                technologies. Allow participation through
+                                the learner's available communication
+                                methods without requiring a single
+                                response modality.
+                            </td>
+
+                            <td>
+                                Standard HTML buttons support common
+                                pointer and keyboard interactions.
+                                Dedicated switch access and direct AAC
+                                integration have not been implemented
+                                or verified.
+                            </td>
+
+                            <td>
+                                Test keyboard navigation and relevant
+                                assistive technologies. Investigate
+                                switch-access compatibility and the
+                                feasibility of AAC integration.
+                                Document which methods have been tested
+                                and avoid claiming compatibility until
+                                it has been verified.
+                            </td>
+                        </tr>
+
+
+                        <!-- E-08 -->
+
+                        <tr>
+                            <th scope="row">
+                                E-08: Technical Accessibility and WCAG 2.2 Alignment
+                            </th>
+
+                            <td>
+                                (World Wide Web Consortium [W3C], 2024);
+                                CAST (2024).
+                                WCAG provides the technical benchmark
+                                for applicable accessibility criteria,
+                                while CAST contributes the broader
+                                inclusive-learning rationale.
+                            </td>
+
+                            <td>
+                                Provide accessible interaction targets,
+                                sufficient text and interface contrast,
+                                visible keyboard focus, appropriate
+                                accessible names and keyboard-operable
+                                functionality. Evaluate the applicable
+                                WCAG 2.2 success criteria.
+                            </td>
+
+                            <td>
+                                Buttons and select elements have a
+                                minimum height of 48 CSS pixels,
+                                visible focus styling and reduced-motion
+                                support. Contrast and full WCAG 2.2
+                                conformance have not been verified.
+                            </td>
+
+                            <td>
+                                Conduct a structured accessibility audit.
+                                Test contrast ratios, target dimensions
+                                and spacing, keyboard operation,
+                                focus visibility, accessible names
+                                and relevant assistive-technology
+                                compatibility. Document the criteria
+                                tested and outstanding issues before
+                                making a conformance claim.
+                            </td>
+                        </tr>
+
+
+                        <!-- E-09 -->
+
+                        <tr>
+                            <th scope="row">
+                                E-09: Interpretable Performance Reporting
+                            </th>
+
+                            <td>
+                                CAST (2024), Guideline 6.4;
+                                Dzaman et al. (2022), concerning
+                                assessment and UDL. These sources
+                                support monitoring progress and
+                                accessible assessment. The reporting
+                                fields and CSV structure are
+                                project-specific design decisions.
+                            </td>
+
+                            <td>
+                                Ensure that exported reports distinguish
+                                response accuracy from the level of
+                                support provided. Enable educators to
+                                identify independent correct responses,
+                                supported correct responses, incorrect
+                                responses and responses that were not
+                                assessed, where applicable.
+                            </td>
+
+                            <td>
+                                The on-screen log identifies independent
+                                and supported correct responses.
+                                CSV fields allow these categories to
+                                be interpreted together, but an explicit
+                                exported performance category is not
+                                currently provided.
+                            </td>
+
+                            <td>
+                                Add an explicit performance category
+                                to the exported report while retaining
+                                separate fields for accuracy and
+                                support level. Document how each
+                                category should be interpreted.
+                                Ensure that missing responses are
+                                not automatically classified as
+                                incorrect or as evidence of insufficient
+                                understanding.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Evaluation note -->
+
+        <aside class="evaluation-note">
+
+            <h2>Evaluation Note</h2>
+
+            <p>
+                The implementation status reflects inspection of the
+                current prototype code. Accessibility, usability and
+                learning effectiveness require separate testing.
+                The cited literature informs design decisions but
+                does not establish that the prototype has been
+                validated for autistic children aged 3 to 5 who use AAC.
+            </p>
+
+        </aside>
+
+        </section>
+
+
+        <!-- Return link -->
+
+        <footer class="page-footer">
+
+            <a href="index.html" class="back-link back-left">
+                ← Main prototype 
+            </a>
+        
+            <a href="Prototype-B.html" class="back-link back-right">
+                Prototype improve →
+            </a>
+        
+        </footer>
+
+
+
+
+    </main>
+
 </body>
 </html>
-
-
